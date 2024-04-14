@@ -37,9 +37,6 @@ public class ReqRes {
     private String name;
     
     @NotBlank(message = "Email không được để trống")
-//	@Email(message = "Định dạng email không hợp lệ")
-//	@Pattern(regexp = "^(?=.*[A-Za-z])[A-Za-z0-9.]*[A-Za-z]+[A-Za-z0-9.]*@gmail\\.com$", 
-//	        message = "Email phải thuộc tên miền @gmail.com, không được chỉ chứa số trước @gmail.com và phải có ít nhất một chữ cái")
     private String email;
     
     @NotBlank(message = "Quyền không được để trống")
@@ -48,8 +45,6 @@ public class ReqRes {
     
     @NotBlank(message = "Password không được để trống")
     @Size(min = 8, message = "Password phải có ít nhất 8 kí tự")
-//    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$", 
-//             message = "password phải có cả chữ , số , ít nhất 1 kí tự đặc biệt")
     private String password;
     
     private List<Product> products;

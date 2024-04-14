@@ -8,11 +8,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class productColor {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+public class productColor extends BaseEntity{
 	
 	private String name;
 	
