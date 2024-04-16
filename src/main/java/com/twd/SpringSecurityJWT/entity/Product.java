@@ -14,7 +14,7 @@ public class Product extends BaseEntity{
     
     private String url;
     
-    private Double price;
+    private Float price;
     
     @ManyToOne
     @JoinColumn(name = "brand_id", nullable = false)
@@ -24,8 +24,11 @@ public class Product extends BaseEntity{
     @JoinColumn(name = "category_id", nullable = false) 
     private Category category;
     
-    @ManyToMany(mappedBy = "products")
-    private Set<OurUsers> users;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private Set<OrderDetail> orderDetails;
+    
+//    @ManyToMany(mappedBy = "products")
+//    private Set<OurUsers> users;
     
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<productComment> comments = new ArrayList<>();

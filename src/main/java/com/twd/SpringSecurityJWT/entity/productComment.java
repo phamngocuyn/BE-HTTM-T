@@ -12,6 +12,8 @@ import lombok.Data;
 @Entity
 @Data
 public class productComment extends BaseEntity{
+	
+	private int numberOfStar;
 
 	private String comment;
 	
@@ -19,11 +21,15 @@ public class productComment extends BaseEntity{
 	
 	private String status;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private OurUsers user;
+//	@ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "user_id")
+//    private OurUsers user;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 }

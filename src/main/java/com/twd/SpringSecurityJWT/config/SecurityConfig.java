@@ -34,7 +34,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> request.requestMatchers("/auth/**", "/public/**").permitAll()
                         .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
                         .requestMatchers("/user/**").hasAnyAuthority("USER")
-                        .requestMatchers("/adminuser/**").hasAnyAuthority("USER", "ADMIN")
+                        .requestMatchers("/employee/**").hasAnyAuthority("EMPLOYEE")
+                        .requestMatchers("/adminuseremployee/**").hasAnyAuthority("USER", "ADMIN", "EMPLOYEE")
+                        .requestMatchers("/adminemployee/**").hasAnyAuthority("EMPLOYEE", "ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(

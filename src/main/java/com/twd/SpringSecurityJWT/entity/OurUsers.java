@@ -8,6 +8,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.ArrayList;
@@ -21,19 +22,25 @@ public class OurUsers extends BaseEntity implements UserDetails {
     private String password;
     private String role;
     
-    @OneToOne(mappedBy = "user")
-    private userDetail userDetail;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Employee> employees;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Customer> customers;
     
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-        name = "user_products",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private Set<Product> products;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(
+//        name = "user_products",
+//        joinColumns = @JoinColumn(name = "user_id"),
+//        inverseJoinColumns = @JoinColumn(name = "product_id")
+//    )
+//    private Set<Product> products;
+//    
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<productComment> comments = new ArrayList<>();
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<productComment> comments = new ArrayList<>();
+    private Set<Status> statuses = new HashSet<>();
     
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
