@@ -17,12 +17,12 @@ public class Product extends BaseEntity{
     private Float price;
     
     @ManyToOne
-    @JoinColumn(name = "brand_id", nullable = false)
+    @JoinColumn(name = "brand_id")
     private Brand brand;
     
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false) 
-    private Category category;
+//    @ManyToOne
+//    @JoinColumn(name = "category_id", nullable = false) 
+//    private Category category;
     
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private Set<OrderDetail> orderDetails;

@@ -1,4 +1,4 @@
-package com.twd.SpringSecurityJWT.service;
+package com.twd.SpringSecurityJWT.service.impl;
 
 import com.twd.SpringSecurityJWT.repository.OurUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;

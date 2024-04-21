@@ -2,7 +2,7 @@ package com.twd.SpringSecurityJWT.controller;
 
 import com.twd.SpringSecurityJWT.dto.ReqRes;
 import com.twd.SpringSecurityJWT.exception.EmailExistsException;
-import com.twd.SpringSecurityJWT.service.AuthService;
+import com.twd.SpringSecurityJWT.service.impl.AuthService;
 
 import jakarta.validation.Valid;
 

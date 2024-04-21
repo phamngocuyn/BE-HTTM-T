@@ -1,4 +1,4 @@
-package com.twd.SpringSecurityJWT.service;
+package com.twd.SpringSecurityJWT.service.impl;
 
 import com.twd.SpringSecurityJWT.dto.ReqRes;
 
@@ -6,6 +6,7 @@ import com.twd.SpringSecurityJWT.entity.OurUsers;
 import com.twd.SpringSecurityJWT.exception.EmailExistsException;
 import com.twd.SpringSecurityJWT.exception.UserNotFoundException;
 import com.twd.SpringSecurityJWT.repository.OurUserRepo;
+import com.twd.SpringSecurityJWT.util.JWTUtils;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;

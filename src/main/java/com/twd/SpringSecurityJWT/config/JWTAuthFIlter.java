@@ -1,7 +1,8 @@
 package com.twd.SpringSecurityJWT.config;
 
-import com.twd.SpringSecurityJWT.service.JWTUtils;
-import com.twd.SpringSecurityJWT.service.OurUserDetailsService;
+import com.twd.SpringSecurityJWT.service.impl.OurUserDetailsService;
+import com.twd.SpringSecurityJWT.util.JWTUtils;
+
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

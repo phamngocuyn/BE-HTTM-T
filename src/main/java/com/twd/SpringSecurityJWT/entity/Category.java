@@ -24,6 +24,9 @@ public class Category extends BaseEntity{
 	@OneToOne(mappedBy = "category")
     private Banner banner;
 	
+//	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+//    private Set<Product> products;
+	
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private Set<Product> products;
+    private Set<Brand> brands;
 }

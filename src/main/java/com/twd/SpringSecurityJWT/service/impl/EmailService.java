@@ -1,4 +1,4 @@
-package com.twd.SpringSecurityJWT.service;
+package com.twd.SpringSecurityJWT.service.impl;
 
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
