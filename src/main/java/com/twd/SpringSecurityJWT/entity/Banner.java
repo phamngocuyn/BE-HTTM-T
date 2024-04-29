@@ -22,11 +22,9 @@ public class Banner extends BaseEntity{
 	
 	private String relatedProducts;
 	
-	@OneToOne
-    @JoinColumn(name = "brand_id", referencedColumnName = "id")
-    private Brand brand;
-	
-	@OneToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
+	@OneToOne(mappedBy = "banner")
     private Category category;
+	
+	@OneToOne(mappedBy = "banner")
+    private Brand brand;
 }

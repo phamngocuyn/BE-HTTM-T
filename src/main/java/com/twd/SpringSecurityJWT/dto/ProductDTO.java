@@ -12,4 +12,8 @@ public class ProductDTO {
     private String url;
     
     private Double price;
+    
+    private int quantity;
+    
+    private Double totalStar;
 }

@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
@@ -21,11 +22,12 @@ public class Category extends BaseEntity{
 	
 	private String categoryUrl;
 	
-	@OneToOne(mappedBy = "category")
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "banner_id", referencedColumnName = "id")
     private Banner banner;
 	
-//	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-//    private Set<Product> products;
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Product> products;
 	
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private Set<Brand> brands;
